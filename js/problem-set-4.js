@@ -20,14 +20,13 @@ function helloAgain() {
   //////////// DO NOT MODIFY
   let name; // DO NOT MODIFY
   //////////// DO NOT MODIFY
-  name = prompt("Hello! What is your name?")
-  var div = document.getElementById("output2")
-  div.innerHTML = 'Hello, ' + name + "!"
 
   // Use the name variable declared above to store the user's response. You
   // do not need to re-declare it, only assign it a value.
 
-  // WRITE YOUR EXERCISE 2 CODE HERE
+  name = prompt("Hello! What is your name?")
+  var div = document.getElementById("output2")
+  div.innerHTML = 'Hello, ' + name + "!"
 
   ///////////////////////////// DO NOT MODIFY
   check("helloAgain", name); // DO NOT MODIFY
@@ -47,7 +46,10 @@ function celsius() {
   // The above code generates a random number between -100 and 1000
   // (inclusive), and rounds this value to 2 decimal places.
 
-  // WRITE YOUR EXERCISE 3 CODE HERE
+  var fahrenheitTemp = ((cels * (9/5)) + 32)
+  var fahRound = fahrenheitTemp.toFixed(2)
+  var div = document.getElementById("output3")
+  div.innerHTML = cels + " degrees Celsius equals " + fahRound + " degrees Fahrenheit."
 
   ////////////////////////// DO NOT MODIFY
   check("celsius", cels); // DO NOT MODIFY
