@@ -3,8 +3,8 @@
  */
 
 function hello() {
-
-  // WRITE YOUR EXERCISE 1 CODE HERE
+  var div = document.getElementById("output1");
+  div.innerHTML = "Hello, AP Computer Science Principles!"
 
   ////////////////// DO NOT MODIFY
   check("hello"); // DO NOT MODIFY
@@ -20,6 +20,9 @@ function helloAgain() {
   //////////// DO NOT MODIFY
   let name; // DO NOT MODIFY
   //////////// DO NOT MODIFY
+  name = prompt("Hello! What is your name?")
+  var div = document.getElementById("output2")
+  div.innerHTML = 'Hello, ' + name + "!"
 
   // Use the name variable declared above to store the user's response. You
   // do not need to re-declare it, only assign it a value.
