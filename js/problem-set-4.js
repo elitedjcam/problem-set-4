@@ -223,26 +223,16 @@ function ounces() {
   let ounces = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
 
-  let centi = 0;
-  let meters = 0;
-  let kiloMeters = 0;
-  while (centimeters > 0) {
-    if (centimeters >= 100000){
-      centimeters = centimeters - 100000;
-      kiloMeters = kiloMeters + 1;
-    }
-    if (centimeters < 100000 && centimeters >= 100){
-      centimeters = centimeters - 100;
-      meters = meters + 1;
-    }
-    if (centimeters < 100){
-      centimeters = centimeters - 1;
-      centi = centi + 1;
-    }
-  }
+  let tons = (ounces/32000);
+  tons = (Math.floor(tons))
+  let pounds = (ounces % 32000/16);
+  pounds = (Math.floor(pounds))
+  let ounce = (ounces % 32000 % 16);
+  ounce = (Math.floor(ounce))
 
-  var div = document.getElementById("output6")
-  div.innerHTML = "Kilometers: " + kiloMeters + "<br>Meters: " + meters + "<br>Centimeters: " + centi
+
+  var div = document.getElementById("output8")
+  div.innerHTML = "Tons: " + tons + "<br>Pounds: " + pounds + "<br>Ounces: " + ounce
 
   ////////////////////////// DO NOT MODIFY
   check("ounces", input); // DO NOT MODIFY
@@ -266,7 +256,19 @@ function money() {
   let pennies = input; // DO NOT MODIFY
   /////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 9 CODE HERE
+  let dollars = (pennies/100);
+  dollars = (Math.floor(dollars))
+  let quarters = (pennies % 100/25);
+  quarters = (Math.floor(quarters))
+  let dimes = (pennies % 100 % 25/10);
+  dimes = (Math.floor(dimes))
+  let nickels = (pennies % 100 % 25 % 10/5);
+  nickels = (Math.floor(nickels))
+  let penny = (pennies % 100 % 25 % 10 % 5)
+  penny = (Math.floor(penny))
+
+  var div = document.getElementById("output9")
+  div.innerHTML = "Dollars: " + dollars + "<br>Quarters: " + quarters + "<br>Dimes: " + dimes + "<br>Nickels: " + nickels + "<br>Pennies: " + penny
 
   ///////////////////////// DO NOT MODIFY
   check("money", input); // DO NOT MODIFY
@@ -290,7 +292,37 @@ function change() {
   let amount = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 10 CODE HERE
+  let quarterChange = 0;
+  let dimeChange = 0;
+  let nickelChange = 0;
+  let inch = 0;
+  while (inches > 0) {
+    if (inches >= 63360){
+      inches = inches - 63360;
+      miles = miles + 1;
+    }
+    if (inches < 63360 && inches >= 36){
+      inches = inches - 36;
+      yards = yards + 1;
+    }
+    if (inches < 36 && inches >= 12){
+      inches = inches - 12;
+      feet = feet + 1;
+    }
+    if (inches < 12){
+    inches = inches - 1;
+    inch = inch + 1;
+    }
+  }
+
+  var div = document.getElementById("output10")
+  if (coins = 1) {
+    div.innerHTML = coins + " coin."
+  }
+  else if (coins > 1){
+    div.innerHTML = coins + " coins."
+  }
+
 
   ////////////////////////// DO NOT MODIFY
   check("change", input); // DO NOT MODIFY
