@@ -113,13 +113,14 @@ function inches() {
       inches = inches - 12;
       feet = feet + 1;
     }
-    if (inches < 12)
+    if (inches < 12){
     inches = inches - 1;
     inch = inch + 1;
+    }
   }
 
   var div = document.getElementById("output5")
-  div.innerHTML = "Miles: " + miles + "<br> Yards: " + yard
+  div.innerHTML = "Miles: " + miles + "<br>Yards: " + yards + "<br>Feet: " + feet + "<br>Inches: " + inch
 
   ////////////////////////// DO NOT MODIFY
   check("inches", input); // DO NOT MODIFY
@@ -143,7 +144,26 @@ function centimeters() {
   let centimeters = input; // DO NOT MODIFY
   /////////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 6 CODE HERE
+  let centi = 0;
+  let meters = 0;
+  let kiloMeters = 0;
+  while (centimeters > 0) {
+    if (centimeters >= 100000){
+      centimeters = centimeters - 100000;
+      kiloMeters = kiloMeters + 1;
+    }
+    if (centimeters < 100000 && centimeters >= 100){
+      centimeters = centimeters - 100;
+      meters = meters + 1;
+    }
+    if (centimeters < 100){
+      centimeters = centimeters - 1;
+      centi = centi + 1;
+    }
+  }
+
+  var div = document.getElementById("output6")
+  div.innerHTML = "Kilometers: " + kiloMeters + "<br>Meters: " + meters + "<br>Centimeters: " + centi
 
   /////////////////////////////// DO NOT MODIFY
   check("centimeters", input); // DO NOT MODIFY
