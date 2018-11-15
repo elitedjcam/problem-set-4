@@ -187,7 +187,19 @@ function fluidOunces() {
   let fluidOunces = input; // DO NOT MODIFY
   /////////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 7 CODE HERE
+  let gallons = (fluidOunces/128);
+  gallons = (Math.floor(gallons))
+  let quarts = (fluidOunces % 128/32);
+  quarts = (Math.floor(quarts))
+  let pints = (fluidOunces % 128 % 32/16);
+  pints = (Math.floor(pints))
+  let cups = (fluidOunces % 128 % 32 % 16/8);
+  cups = (Math.floor(cups))
+  let floz = (fluidOunces % 128 % 32 % 16 % 8)
+  floz = (Math.floor(floz))
+
+  var div = document.getElementById("output7")
+  div.innerHTML = "Gallons: " + gallons + "<br>Quarts: " + quarts + "<br>Pints: " + pints + "<br>Cups: " + cups + "<br>Fluid Ounces: " + floz
 
   /////////////////////////////// DO NOT MODIFY
   check("fluidOunces", input); // DO NOT MODIFY
@@ -211,7 +223,26 @@ function ounces() {
   let ounces = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 8 CODE HERE
+  let centi = 0;
+  let meters = 0;
+  let kiloMeters = 0;
+  while (centimeters > 0) {
+    if (centimeters >= 100000){
+      centimeters = centimeters - 100000;
+      kiloMeters = kiloMeters + 1;
+    }
+    if (centimeters < 100000 && centimeters >= 100){
+      centimeters = centimeters - 100;
+      meters = meters + 1;
+    }
+    if (centimeters < 100){
+      centimeters = centimeters - 1;
+      centi = centi + 1;
+    }
+  }
+
+  var div = document.getElementById("output6")
+  div.innerHTML = "Kilometers: " + kiloMeters + "<br>Meters: " + meters + "<br>Centimeters: " + centi
 
   ////////////////////////// DO NOT MODIFY
   check("ounces", input); // DO NOT MODIFY
