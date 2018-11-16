@@ -292,27 +292,28 @@ function change() {
   let amount = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
 
-  let quarterChange = 0;
-  let dimeChange = 0;
-  let nickelChange = 0;
-  let inch = 0;
-  while (inches > 0) {
-    if (inches >= 63360){
-      inches = inches - 63360;
-      miles = miles + 1;
+  let quarterCoins = 0;
+  let dimeCoins = 0;
+  let nickelCoins = 0;
+  let pennyCoins = 0;
+  while (amount > 0) {
+    if (amount >= 1.00){
+      amount = amount - 0.25;
+      quarterCoins = quarterCoins + 1;
     }
-    if (inches < 63360 && inches >= 36){
-      inches = inches - 36;
-      yards = yards + 1;
+    if (amount < 0.25 && amount >= 0.10){
+      amount = amount - 0.10;
+      dimeCoins = dimeCoins + 1;
     }
-    if (inches < 36 && inches >= 12){
-      inches = inches - 12;
-      feet = feet + 1;
+    if (amount < 0.10 && amount >= 0.05){
+      amount = amount - 12;
+      nickelCoins = nickelCoins + 1;
     }
-    if (inches < 12){
-    inches = inches - 1;
-    inch = inch + 1;
+    if (amount < 0.05){
+    amount = amount - 1;
+    pennyCoins = pennyCoins + 1;
     }
+    coins = pennyCoins + dimeCoins + nickelCoins + pennyCoins
   }
 
   var div = document.getElementById("output10")
