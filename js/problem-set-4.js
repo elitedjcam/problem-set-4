@@ -297,7 +297,7 @@ function change() {
   let nickelCoins = 0;
   let pennyCoins = 0;
   while (amount > 0) {
-    if (amount >= 1.00){
+    if (amount <= 1.00){
       amount = amount - 0.25;
       quarterCoins = quarterCoins + 1;
     }
@@ -306,11 +306,11 @@ function change() {
       dimeCoins = dimeCoins + 1;
     }
     if (amount < 0.10 && amount >= 0.05){
-      amount = amount - 12;
+      amount = amount - 0.05;
       nickelCoins = nickelCoins + 1;
     }
     if (amount < 0.05){
-    amount = amount - 1;
+    amount = amount - 0.01;
     pennyCoins = pennyCoins + 1;
     }
     coins = pennyCoins + dimeCoins + nickelCoins + pennyCoins
