@@ -292,36 +292,26 @@ function change() {
   let amount = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
 
+  amount *= 100;
   let quarterCoins = 0;
   let dimeCoins = 0;
   let nickelCoins = 0;
   let pennyCoins = 0;
-  while (amount > 0) {
-    if (amount <= 1.00){
-      amount = amount - 0.25;
-      quarterCoins = quarterCoins + 1;
-    }
-    if (amount < 0.25 && amount >= 0.10){
-      amount = amount - 0.10;
-      dimeCoins = dimeCoins + 1;
-    }
-    if (amount < 0.10 && amount >= 0.05){
-      amount = amount - 0.05;
-      nickelCoins = nickelCoins + 1;
-    }
-    if (amount < 0.05){
-    amount = amount - 0.01;
-    pennyCoins = pennyCoins + 1;
-    }
-    coins = pennyCoins + dimeCoins + nickelCoins + pennyCoins
-  }
+
+  quarterCoins = Math.floor(amount/25);
+  dimeCoins = Math.floor((amount - (quarterCoins*25)) / 10);
+  nickelCoins = Math.floor((amount - (quarterCoins*25) - (dimeCoins*10)) / 5);
+  pennyCoins = Math.floor((amount - (quarterCoins*25) - (dimeCoins*10) - (nickelCoins*5)) / 1);
+
+  let coins = quarterCoins + dimeCoins + nickelCoins + pennyCoins;
+
 
   var div = document.getElementById("output10")
-  if (coins = 1) {
-    div.innerHTML = coins + " coin."
+  if (coins == 1) {
+    div.innerHTML = coins + " coin.";
   }
-  else if (coins > 1){
-    div.innerHTML = coins + " coins."
+  else{
+    div.innerHTML = coins + " coins.";
   }
 
 
